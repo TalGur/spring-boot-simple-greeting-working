@@ -15,8 +15,8 @@ public class HelloController {
     }
 
     @RequestMapping("/greeting")
-    public String greeting(@RequestParam(value="name", defaultValue="World") String name) {
-        return greeting.toString() + name;
+    public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
+        return greeting;
     }
     
 }
