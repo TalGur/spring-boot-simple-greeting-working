@@ -6,15 +6,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
 public class HelloController {
-    
+
+    Greeting greeting = new Greeting(1,"Greetings from Spring Boot!");
+
     @RequestMapping("/")
     public String index() {
-        return "Greetings from Spring Boot!";
+        return greeting.toString();
     }
 
     @RequestMapping("/greeting")
     public String greeting(@RequestParam(value="name", defaultValue="World") String name) {
-        return "Greetings "+name+"from Spring Boot!";
+        return greeting.toString() + name;
     }
     
 }
