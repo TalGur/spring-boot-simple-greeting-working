@@ -7,7 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RestController
 public class HelloController {
 
-    Greeting greeting = new Greeting(1,"Greetings from Spring Boot!");
+    Greeting greeting;
+
+    public HelloController() {
+        this.greeting = new Greeting(1,"Greetings from Spring Boot!");;
+    }
 
     @RequestMapping("/")
     public String index() {
