@@ -1,5 +1,6 @@
 package hello;
 
+import hello.Summarizer.Summarizer;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,7 +27,9 @@ public class HelloController {
 
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
-        return greetings.get((long) 2);
+        Summarizer summarizer = new Summarizer();
+        int id = summarizer.Sum(1,1);
+        return greetings.get((long) id);
     }
 
     @RequestMapping(value="/greeting/{id}")
